@@ -1,0 +1,53 @@
+# ---------------------------
+# GLOBAL SETTINGS (root)
+# ---------------------------
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+
+# ---------------------------
+# ENVIRONMENT FILES
+# ---------------------------
+.env
+.env.*
+*.env
+*.venv/
+academix-venv/
+backend/academix-venv/
+
+# ---------------------------
+# ALEMBIC & MIGRATIONS
+# ---------------------------
+alembic/versions/__pycache__/
+alembic/versions/*.pyc
+alembic.ini
+
+# ---------------------------
+# UPLOADS / MEDIA / FILE STORAGE
+# ---------------------------
+media/
+uploads/
+files/
+storage/
+temp/
+
+# ---------------------------
+# IDE / EDITORS
+# ---------------------------
+.vscode/
+.idea/
+*.iml
+
+# ---------------------------
+# OS / SYSTEM
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+
+
