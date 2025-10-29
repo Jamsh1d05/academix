@@ -23,5 +23,21 @@ class User(Base):
     deleted_at = Column(DateTime, nullable=True)  # soft delete
 
     # relationships
-    memberships = relationship("CourseMembership", back_populates="user", cascade="all, delete-orphan")
-    submissions = relationship("Submission", back_populates="user", cascade="all, delete-orphan")
+    memberships = relationship(
+        "CourseMembership",
+        back_populates="user",
+        cascade="all, delete-orphan"
+    )
+
+    submissions_made = relationship(
+        "Submission",
+        foreign_keys="[Submission.student_id]",
+        back_populates="student",
+        cascade="all, delete-orphan"
+    )
+
+    submissions_graded = relationship(
+        "Submission",
+        foreign_keys="[Submission.graded_by_id]",
+        back_populates="graded_by"
+    )

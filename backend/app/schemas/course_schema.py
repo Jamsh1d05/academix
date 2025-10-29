@@ -17,9 +17,12 @@ class CourseUpdate(BaseModel):
     description: str | None = None
     is_published: bool | None = None
 
-class CourseOut(CourseBase):
+class CourseOut(BaseModel):
     id: UUID
-    public_id: UUID
+    title: str
+    summary: str | None = None
+    description: str | None = None
+    is_published: bool = False
     created_at: datetime
     updated_at: datetime
 
