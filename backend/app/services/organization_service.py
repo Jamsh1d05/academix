@@ -43,3 +43,4 @@ class OrganizationService:
         await db.delete(org)
         await db.commit()
         return org
+
