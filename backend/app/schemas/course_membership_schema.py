@@ -1,19 +1,29 @@
+import uuid
 from datetime import datetime
-from uuid import UUID
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+
 
 class CourseMembershipBase(BaseModel):
-    user_id: UUID
-    course_id: UUID
-    role: str = "student"
+    role: str = Field(default="student", example="student")
+    is_active: bool = True
+
 
 class CourseMembershipCreate(CourseMembershipBase):
-    pass
+    user_id: uuid.UUID
+    course_id: uuid.UUID
 
-class CourseMembershipOut(CourseMembershipBase):
-    id: UUID
-    enrolled_at: datetime
+
+class CourseMembershipUpdate(BaseModel):
+    role: str = Field(..., example="instructor")
+
+
+class CourseMembershipResponse(BaseModel):
+    id: uuid.UUID
+    user_id: uuid.UUID
+    course_id: uuid.UUID
+    role: str
     is_active: bool
+    enrolled_at: datetime
 
     class Config:
-        from_attributes = True
+        orm_mode = True
