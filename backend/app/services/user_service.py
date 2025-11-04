@@ -5,7 +5,7 @@ from app.schemas.user_schema import UserCreate, UserUpdate
 from app.core.security import get_password_hash, verify_password
 from uuid import UUID
 
-
+    
 class UserService:
     @staticmethod   
     async def get_user_by_email(db: AsyncSession, email: str):
