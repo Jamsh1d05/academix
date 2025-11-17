@@ -6,9 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import NoResultFound
 
 from app.models.courses_model import Course
-from app.models.course_memberships_model import CourseMembership
 from app.schemas.course_schema import CourseCreate, CourseUpdate
-from app.schemas.course_membership_schema import CourseMembershipCreate
+
 
 class CourseService:
     @staticmethod
