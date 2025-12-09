@@ -59,6 +59,7 @@ class CourseMembershipService:
         result = await self.db.execute(stmt)
         return result.scalars().all()
 
+
     async def get_user_courses(self, user_id: uuid.UUID):
         stmt = (
             select(CourseMembership)
